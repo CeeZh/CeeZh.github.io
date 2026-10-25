@@ -77,6 +77,9 @@
                 <td style="padding:20px;width:100%;vertical-align:middle">
                   <h2>News</h2>
                   <ul>
+                    <li>[09/2026] <a href="https://arxiv.org/pdf/2607.16189">VTS</a> was accepted to <b>NeurIPS 2026</b>. </li>
+                    <li>[08/2026] <a href="https://arxiv.org/pdf/2602.00288">TimeBlind</a> was accepted to <b>EMNLP 2026</b>. </li>
+                    <li>[07/2026] <a href="https://arxiv.org/pdf/2605.09874">EgoMemReason</a> was accepted to <b>COLM 2026</b>. </li>
                     <li>[05/19/2026] Started internship at Meta.</li>
                     <li>[01/13/2026] <a href="https://arxiv.org/pdf/2505.24869">SiLVR</a> was accepted to <b>TMLR</b>. </li>
                     <li>[07/01/2025] <a href="https://sites.google.com/cs.unc.edu/silvr">SiLVR</a> won <span style="color: red;">the 1st place </span> in Track 1B at <a href="https://sites.google.com/view/loveucvpr25/track1b">Multimodal Video Agent Workshop@CVPR2025</a>. </li>
@@ -119,8 +122,56 @@
                   <br>
                   <b>Ce Zhang</b>, Ziyang Wang, Yulu Pan, Oluwatumininu Oguntola, Pranav Wagh, Qiyu Wu, Hiromi Wakaki, Mohit Bansal, Gedas Bertasius
                   <br>
-                  <em>arXiv</em>, 2026
+                  <em>NeurIPS</em>, 2026
                   <p>We introduce VideoTreeSearch (VTS), a self-correcting agent for long-video understanding that searches videos through an adaptive temporal tree. VTS navigates the tree with discrete actions: zoom in, zoom out, and shift, allowing it to progressively localize relevant evidence and explicitly backtrack from incorrect decisions. VTS substantially improves grounded long-video QA and also generalizes to standard long-video QA benchmarks.</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/watchact.png" alt="clean-usnob" width="160" height="48">
+                </td>
+                <td width="75%" valign="middle">
+                  <a href="https://arxiv.org/pdf/2606.26443">
+                    <span class="papertitle">WatchAct: A Benchmark for Behavior-Grounded Robot Manipulation</span>
+                  </a>
+                  <br>
+                  Baiqi Li, <b>Ce Zhang</b>, Yu Fang, Yue Yang, Shangzhe Li, Mingyu Ding, Gedas Bertasius
+                  <br>
+                  <em>arXiv</em>, 2026
+                  <p>We introduce WatchAct, a benchmark for robot manipulation grounded in observed human behavior. Each instance pairs a real-world human-action video and a language instruction with an executable LIBERO task. WatchAct contains 3,000 long-horizon instances across 14 tasks covering event grounding, procedural reasoning, implicit intent inference, and episodic reasoning. Current systems struggle: the best VLM-policy pipeline reaches only 16.3% success in simulation and 14.0% on a real Franka robot.</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/egomemreason.png" alt="clean-usnob" width="160" height="64">
+                </td>
+                <td width="75%" valign="middle">
+                  <a href="https://arxiv.org/pdf/2605.09874">
+                    <span class="papertitle">EgoMemReason: A Memory-Driven Reasoning Benchmark for Long-Horizon Egocentric Video Understanding</span>
+                  </a>
+                  <br>
+                  Ziyang Wang*, Yue Zhang*, Shoubin Yu, <b>Ce Zhang</b>, Zengqi Zhao, Jaehong Yoon, Hyunji Lee, Gedas Bertasius, Mohit Bansal
+                  <br>
+                  <em>COLM</em>, 2026
+                  <p>We introduce EgoMemReason, a benchmark for week-long egocentric video understanding through memory-driven reasoning. EgoMemReason evaluates three memory types: entity, event, and behavior memory. It contains 500 questions, each requiring an average of 5.1 evidence segments and 25.9 hours of memory backtracking. Across 17 MLLMs and agentic frameworks, the best model reaches only 39.6% accuracy.</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/timeblind.png" alt="clean-usnob" width="160" height="106">
+                </td>
+                <td width="75%" valign="middle">
+                  <a href="https://arxiv.org/pdf/2602.00288">
+                    <span class="papertitle">TimeBlind: A Spatio-Temporal Compositionality Benchmark for Video LLMs</span>
+                  </a>
+                  <br>
+                  Baiqi Li, Kangyi Zhao, <b>Ce Zhang</b>, Chancharik Mitra, Jean de Dieu Nyandwi, Gedas Bertasius
+                  <br>
+                  <em>EMNLP</em>, 2026
+                  <p>We present TimeBlind, a diagnostic benchmark for compositional spatio-temporal understanding. TimeBlind adopts a minimal-pairs paradigm: paired videos share identical static visual content and differ only in temporal structure, with complementary questions to neutralize language priors. Evaluating over 20 MLLMs (e.g., GPT-5, Gemini 3 Pro), we find that the best model reaches only 48.2% instance accuracy, far below human performance (98.2%).</p>
                 </td>
               </tr>
 
@@ -135,7 +186,7 @@
                   <br>
                   <b>Ce Zhang</b>, Yan-Bo Lin, Ziyang Wang, Mohit Bansal, Gedas Bertasius
                   <br>
-                  <em>TMLR</em>
+                  <em>TMLR</em>, 2026
                   <p>We introduce SiLVR, a simple language-based video reasoning framework. SiLVR achieves SOTA performance on Video-MMMU (comprehension), Video-MMLU, Video-MME (long split, with subtitles), CGBench (MCQ), and EgoLife. Additionally, we show that reasoning LLMs bring greater benefits for tasks that require complex video reasoning. We believe the simple yet effective design of SiLVR will enable the research community to build on our work and use our framework as a baseline for more powerful methods.</p>
                 </td>
               </tr>
@@ -247,8 +298,8 @@
                 <td style="padding:20px;width:100%;vertical-align:middle">
                   <h2>Services</h2>
                   <p>
-                    Reviewer: NeurIPS 2026, CVPR 2026, NeurIPS 2025, ICCV 2025, CVPR 2025, ECCV 2024 (<span style="color: red;">Outstanding Reviewer Award</span>), ACL Rolling Review (June 2024, Dec. 2024), IEEE TCSVT <br>
-                    Organizer: <a href="https://sites.google.com/view/t4v-cvpr24">T4V @ CVPR 2024</a>, <a href="https://sites.google.com/view/t4v-cvpr25/">T4V @ CVPR 2025</a>
+                    Reviewer: NeurIPS 2026, CVPR 2026, NeurIPS 2025, ICCV 2025, CVPR 2025, ECCV 2024 (<span style="color: red;">Outstanding Reviewer Award</span>), ACL Rolling Review (June 2024, Dec. 2024), IEEE TPAMI, IEEE TCSVT <br>
+                    Organizer: <a href="https://sites.google.com/view/loveucvpr26">LOVEU @ CVPR 2026</a>, <a href="https://sites.google.com/view/t4v-cvpr26/">T4V @ CVPR 2026</a>, <a href="https://sites.google.com/view/t4v-cvpr25/">T4V @ CVPR 2025</a>, <a href="https://sites.google.com/view/t4v-cvpr24">T4V @ CVPR 2024</a>
                   </p>
                 </td>
             </tbody>

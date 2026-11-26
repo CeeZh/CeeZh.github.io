@@ -1,5 +1,5 @@
-# Builds the Jekyll site and publishes _site/ to the gh-pages branch.
-# GitHub Pages must serve from that branch: Settings -> Pages -> Deploy from a branch -> gh-pages, / (root).
+# Builds the Jekyll site and publishes it directly to GitHub Pages (no gh-pages branch).
+# One-time setting: Settings -> Pages -> Build and deployment -> Source: GitHub Actions.
 name: Deploy site
 
 on:
@@ -15,10 +15,16 @@ on:
   workflow_dispatch: # "Run workflow" button in the Actions tab
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency: # one deployment at a time; a newer push waits rather than cancelling a deploy in progress
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     # pinned: ubuntu-latest (26.04) only ships the newest Ruby patch releases and ImageMagick 7,
     # while al-folio's image pipeline expects ImageMagick 6's `convert`
     runs-on: ubuntu-24.04
@@ -48,8 +54,20 @@ jobs:
           npm install -g purgecss
           purgecss -c purgecss.config.js
 
-      - name: Deploy 🚀
+      - name: Upload site 📦
         if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: actions/upload-pages-artifact@v5
         with:
-          folder: _site
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy 🚀
+        id: deployment
+        uses: actions/deploy-pages@v5

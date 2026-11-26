@@ -1,7 +1,7 @@
 # ceezh.github.io
 
 Source for [ceezh.github.io](https://ceezh.github.io), built with [al-folio](https://github.com/alshedivat/al-folio) v1 (Jekyll).
-Every push to `main` triggers GitHub Actions to build the site and publish it to the `gh-pages` branch.
+Every push to `main` triggers GitHub Actions to build the site and publish it to GitHub Pages (everything lives on `main`).
 
 ## Layout
 
@@ -73,12 +73,14 @@ docker compose -f docker-compose-slim.yml up
 
 Or with Ruby 3.3 + Bundler: `bundle install && bundle exec jekyll serve`, then open http://localhost:4000.
 
-## Deployment (one-time setup)
+## Deployment
 
-1. Push to `main`. The **Deploy site** workflow builds the site and pushes the result to the `gh-pages` branch.
-2. In the repo on GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch **`gh-pages`**, folder **`/ (root)`**.
+One-time setting on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+(GitHub's own "Deploy from a branch" mode cannot build al-folio's plugins, so the site is built by
+`.github/workflows/deploy.yml` and uploaded to Pages directly.)
 
-After that, every push to `main` redeploys automatically (takes ~3–5 minutes; check the **Actions** tab if something looks off).
+After that, every push to `main` rebuilds and redeploys the site in about 1–2 minutes. If something looks off,
+check the **Actions** tab; **Run workflow** there redeploys without a new commit.
 
 ## Local overrides of al-folio files
 

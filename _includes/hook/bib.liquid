@@ -1,0 +1,9 @@
+{%- comment -%}
+  Hook that al-folio's bib layout includes for every publication, right after it builds the
+  venue text in `entrytype`; whatever is left in `entrytype` is what the page shows.
+  Shows arXiv preprints as "arXiv, 2026" instead of "arXiv preprint arXiv:2611.33368, 2026".
+  The BibTeX behind the "Bib" button keeps the full journal field.
+{%- endcomment -%}
+{%- if entry.journal contains 'arXiv preprint' -%}
+  {%- capture entrytype -%}<em>arXiv</em>{%- endcapture -%}
+{%- endif -%}

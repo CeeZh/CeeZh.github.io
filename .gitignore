@@ -1,0 +1,18 @@
+# Jekyll build output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.tweet-cache/
+assets/libs/
+al-folio-upgrade-report.md
+
+# Ruby / Node tooling
+.bundle/
+.ruby-version
+vendor/
+node_modules/
+
+# OS / editor files
+.DS_Store
+.idea/

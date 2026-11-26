@@ -1,0 +1,55 @@
+# Builds the Jekyll site and publishes _site/ to the gh-pages branch.
+# GitHub Pages must serve from that branch: Settings -> Pages -> Deploy from a branch -> gh-pages, / (root).
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "README.md"
+      - "LICENSE"
+  pull_request: # build only, to catch errors before merging
+    branches:
+      - main
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    # pinned: ubuntu-latest (26.04) only ships the newest Ruby patch releases and ImageMagick 7,
+    # while al-folio's image pipeline expects ImageMagick 6's `convert`
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v7
+
+      - name: Setup Ruby 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3" # latest 3.3.x available on the runner
+          bundler-cache: true
+
+      - name: Setup Node 🧰 # JS runtime for jekyll-terser and purgecss
+        uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+
+      - name: Build 🔧
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          export JEKYLL_ENV=production
+          bundle exec jekyll build
+
+      - name: Purge unused CSS 🧹
+        run: |
+          npm install -g purgecss
+          purgecss -c purgecss.config.js
+
+      - name: Deploy 🚀
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site

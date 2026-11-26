@@ -1,0 +1,215 @@
+---
+---
+
+% Publications, newest first. The publications page groups them by arxiv_year;
+% within a year, and in "selected publications", they appear in the order listed here.
+%
+% Custom fields, see docs/CUSTOMIZE.md in the al-folio repo:
+%   arxiv_year           : REQUIRED in every entry. Year of the first arXiv version (the first two
+%                          digits of the arXiv ID, 2505.xxxxx means 2025), or the publication year
+%                          if the paper is not on arXiv. The build fails if an entry lacks it.
+%                          The year field stays the publication year shown after the venue.
+%   selected = true      : also listed under "selected publications" on the home page
+%   abbr                 : venue badge, colors and links live in _data/venues.yml
+%   preview              : thumbnail file in assets/img/publication_preview/
+%   abstract             : "Abs" button
+%   arxiv, pdf, code, website : link buttons
+%   bibtex_show = true   : "Bib" button
+%   Equal contribution   : put * after the last name, like Zhang*, Ce
+
+@article{zhang2026delovi,
+  abbr        = {arXiv},
+  title       = {Searching Ultra-Long Videos with Decision Models},
+  author      = {Zhang, Ce and Li, Baiqi and Ha, Seongsu and Bertasius, Gedas},
+  journal     = {arXiv preprint arXiv:2611.33368},
+  year        = {2026},
+  arxiv_year  = {2026},
+  arxiv       = {2611.33368},
+  pdf         = {https://arxiv.org/pdf/2611.33368},
+  code        = {https://github.com/CeeZh/DeLoVi},
+  abstract    = {We introduce DeLoVi (Decision Models for Long Video), a framework that leverages pretrained decision models to retrieve evidence from ultra-long videos. Like an LLM, a decision model reads the question together with the candidate evidence, so it can reason over both; unlike an LLM, it directly outputs a relevance score without generating text, which makes it fast and inexpensive. DeLoVi-S achieves state-of-the-art performance on three ultra-long video understanding benchmarks (EgoLifeQA, EgoMemReason, and MM-Lifelong). DeLoVi-E, which refines its memory construction and retrieval policies through automated policy evolution, maintains comparable performance while reducing input tokens by 34x on average, and runs over 3x faster than the best prior method on EgoLifeQA.},
+  preview     = {delovi.png},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@article{alwayson2026roadmap,
+  abbr        = {Preprints},
+  title       = {Always-On Personal Intelligence: A Roadmap Towards Continuing, Self-Evolving Loops},
+  author      = {Liu, Shuai and Guo, Hongming and Jin, Weiyang and Hu, Kairui and Tian, Shulin and Dong, Yuhao and Wu, Jinming and Zhang, Kaichen and Tang, Yujin and Han, Xinyang and Chai, Wenhao and Fu, Yuqian and Zhang, Ce and Zhang, Yuanhan and Kong, Lingdong and Siyao, Li and Yang, Jingkang and Bertasius, Gedas and Li, Manling and Wu, Jiajun and Wang, Mengdi and Song, Dawn and Liu, Ziwei},
+  journal     = {Preprints},
+  year        = {2026},
+  arxiv_year  = {2026},
+  doi         = {10.20944/preprints202611.0793.v1},
+  pdf         = {https://always-on-intelligence.github.io/Always-On_Personal_Intelligence.pdf},
+  code        = {https://github.com/Always-On-Intelligence/HALO},
+  website     = {https://always-on-intelligence.github.io/},
+  abstract    = {Always-on personal intelligence requires a continuing loop that sustains assistance between requests, retains personal context, carries unfinished commitments forward, and can become self-evolving over time. We organize the assistant into three functional modules, Sensing, Memory, and Action, connected by six directed channels, and review each module's capabilities, policies, and evaluation methods. To assess the loop completeness of existing systems, we introduce the Harness for Always-On Loop Oversight (HALO), which combines literature and code reviews with executable tests. Our synthesis reveals the thinnest support for two channels, Memory guiding Sensing and Action outcomes returning to Memory, which motivates two research priorities: keeping sensing open to unexpected change and attributing outcomes to earlier decisions.},
+  preview     = {alwayson.png},
+  bibtex_show = {true}
+}
+
+@inproceedings{zhang2026vts,
+  abbr        = {NeurIPS},
+  title       = {Searching Videos as Trees: Self-Correcting Agents for Grounded Long Video QA},
+  author      = {Zhang, Ce and Wang, Ziyang and Pan, Yulu and Oguntola, Oluwatumininu and Wagh, Pranav and Wu, Qiyu and Wakaki, Hiromi and Bansal, Mohit and Bertasius, Gedas},
+  booktitle   = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year        = {2026},
+  arxiv_year  = {2026},
+  arxiv       = {2607.16189},
+  pdf         = {https://arxiv.org/pdf/2607.16189},
+  abstract    = {We introduce VideoTreeSearch (VTS), a self-correcting agent for long-video understanding that searches videos through an adaptive temporal tree. VTS navigates the tree with three discrete actions (zoom in, zoom out, and shift), allowing it to progressively localize relevant evidence and explicitly backtrack from incorrect decisions. VTS substantially improves grounded long-video QA and also generalizes to standard long-video QA benchmarks.},
+  preview     = {vts.png},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@article{li2026watchact,
+  abbr        = {arXiv},
+  title       = {WatchAct: A Benchmark for Behavior-Grounded Robot Manipulation},
+  author      = {Li, Baiqi and Zhang, Ce and Fang, Yu and Yang, Yue and Li, Shangzhe and Ding, Mingyu and Bertasius, Gedas},
+  journal     = {arXiv preprint arXiv:2606.26443},
+  year        = {2026},
+  arxiv_year  = {2026},
+  arxiv       = {2606.26443},
+  pdf         = {https://arxiv.org/pdf/2606.26443},
+  abstract    = {We introduce WatchAct, a benchmark for robot manipulation grounded in observed human behavior. Each instance pairs a real-world human-action video and a language instruction with an executable LIBERO task. WatchAct contains 3,000 long-horizon instances across 14 tasks covering event grounding, procedural reasoning, implicit intent inference, and episodic reasoning. Current systems struggle: the best VLM-policy pipeline reaches only 16.3\% success in simulation and 14.0\% on a real Franka robot.},
+  preview     = {watchact.png},
+  bibtex_show = {true}
+}
+
+@inproceedings{wang2026egomemreason,
+  abbr        = {COLM},
+  title       = {EgoMemReason: A Memory-Driven Reasoning Benchmark for Long-Horizon Egocentric Video Understanding},
+  author      = {Wang*, Ziyang and Zhang*, Yue and Yu, Shoubin and Zhang, Ce and Zhao, Zengqi and Yoon, Jaehong and Lee, Hyunji and Bertasius, Gedas and Bansal, Mohit},
+  booktitle   = {Conference on Language Modeling (COLM)},
+  year        = {2026},
+  arxiv_year  = {2026},
+  arxiv       = {2605.09874},
+  pdf         = {https://arxiv.org/pdf/2605.09874},
+  annotation  = {* Equal contribution},
+  abstract    = {We introduce EgoMemReason, a benchmark for week-long egocentric video understanding through memory-driven reasoning. EgoMemReason evaluates three memory types: entity, event, and behavior memory. It contains 500 questions, each requiring an average of 5.1 evidence segments and 25.9 hours of memory backtracking. Across 17 MLLMs and agentic frameworks, the best model reaches only 39.6\% accuracy.},
+  preview     = {egomemreason.png},
+  bibtex_show = {true}
+}
+
+@inproceedings{li2026timeblind,
+  abbr        = {EMNLP},
+  title       = {TimeBlind: A Spatio-Temporal Compositionality Benchmark for Video LLMs},
+  author      = {Li, Baiqi and Zhao, Kangyi and Zhang, Ce and Mitra, Chancharik and Nyandwi, Jean de Dieu and Bertasius, Gedas},
+  booktitle   = {Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year        = {2026},
+  arxiv_year  = {2026},
+  arxiv       = {2602.00288},
+  pdf         = {https://arxiv.org/pdf/2602.00288},
+  abstract    = {We present TimeBlind, a diagnostic benchmark for compositional spatio-temporal understanding. TimeBlind adopts a minimal-pairs paradigm: paired videos share identical static visual content and differ only in temporal structure, with complementary questions to neutralize language priors. Evaluating over 20 MLLMs (e.g., GPT-5, Gemini 3 Pro), we find that the best model reaches only 48.2\% instance accuracy, far below human performance (98.2\%).},
+  preview     = {timeblind.png},
+  bibtex_show = {true}
+}
+
+@article{zhang2026silvr,
+  abbr        = {TMLR},
+  title       = {SiLVR: A Simple Language-based Video Reasoning Framework},
+  author      = {Zhang, Ce and Lin, Yan-Bo and Wang, Ziyang and Bansal, Mohit and Bertasius, Gedas},
+  journal     = {Transactions on Machine Learning Research (TMLR)},
+  year        = {2026},
+  arxiv_year  = {2025},
+  arxiv       = {2505.24869},
+  pdf         = {https://arxiv.org/pdf/2505.24869},
+  website     = {https://sites.google.com/cs.unc.edu/silvr},
+  award       = {SiLVR won **1st place** in Track 1B of the [Multimodal Video Agent Workshop @ CVPR 2025](https://sites.google.com/view/loveucvpr25/track1b).},
+  award_name  = {1st Place, CVPR'25 Challenge},
+  abstract    = {We introduce SiLVR, a simple language-based video reasoning framework. SiLVR achieves SOTA performance on Video-MMMU (comprehension), Video-MMLU, Video-MME (long split, with subtitles), CGBench (MCQ), and EgoLife. Additionally, we show that reasoning LLMs bring greater benefits for tasks that require complex video reasoning. We believe the simple yet effective design of SiLVR will enable the research community to build on our work and use our framework as a baseline for more powerful methods.},
+  preview     = {silvr.png},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@inproceedings{zhang2026videoplan,
+  abbr        = {WACV},
+  title       = {Enhancing Visual Planning with Auxiliary Tasks and Multi-token Prediction},
+  author      = {Zhang, Ce and Song, Yale and Desai, Ruta and Iuzzolino, Michael Louis and Tighe, Joseph and Bertasius, Gedas and Kottur, Satwik},
+  booktitle   = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year        = {2026},
+  arxiv_year  = {2025},
+  arxiv       = {2507.15130},
+  pdf         = {https://arxiv.org/pdf/2507.15130},
+  abstract    = {We introduce VideoPlan, a multimodal large language model optimized for long-horizon visual planning. We propose Auxiliary Task Augmentation and Multi-token Prediction to enhance its visual planning ability. VideoPlan achieves SOTA performance on COIN and CrossTask for the challenging Visual Planning for Assistance (VPA) task. VideoPlan also achieves competitive performance on the Ego4D Long-term Action Anticipation benchmark.},
+  preview     = {videoplan.png},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@inproceedings{pan2025basket,
+  abbr        = {CVPR},
+  title       = {BASKET: A Large-Scale Video Dataset for Fine-Grained Skill Estimation},
+  author      = {Pan, Yulu and Zhang, Ce and Bertasius, Gedas},
+  booktitle   = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year        = {2025},
+  arxiv_year  = {2025},
+  arxiv       = {2503.20781},
+  pdf         = {https://arxiv.org/pdf/2503.20781},
+  abstract    = {We present BASKET, a large-scale basketball video dataset for fine-grained skill estimation. BASKET contains more than 4,400 hours of video capturing 32,232 basketball players from all over the world. We benchmark multiple SOTA video recognition models and reveal that these models struggle to achieve good results on our benchmark.},
+  preview     = {basket.png},
+  bibtex_show = {true},
+}
+
+@inproceedings{zhang2024llovi,
+  abbr        = {EMNLP},
+  title       = {A Simple LLM Framework for Long-Range Video Question-Answering},
+  author      = {Zhang*, Ce and Lu*, Taixi and Islam, Md Mohaiminul and Wang, Ziyang and Yu, Shoubin and Bansal, Mohit and Bertasius, Gedas},
+  booktitle   = {Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year        = {2024},
+  arxiv_year  = {2023},
+  arxiv       = {2312.17235},
+  pdf         = {https://arxiv.org/pdf/2312.17235},
+  annotation  = {* Equal contribution},
+  abstract    = {We present LLoVi, a language-based framework for long-range video question-answering (LVQA). LLoVi decomposes LVQA into two stages: (1) visual captioning by a short-term visual captioner, and (2) long-range temporal reasoning by an LLM. We conduct a thorough empirical analysis of our proposed framework. LLoVi achieves state-of-the-art performance on EgoSchema, NExT-QA, IntentQA, and NExT-GQA.},
+  preview     = {llovi.png},
+  bibtex_show = {true},
+  selected    = {true}
+}
+
+@inproceedings{zhang2024objectprompts,
+  abbr        = {WACV},
+  title       = {Object-centric Video Representation for Long-term Action Anticipation},
+  author      = {Zhang*, Ce and Fu*, Changcheng and Wang, Shijie and Agarwal, Nakul and Lee, Kwonjoon and Choi, Chiho and Sun, Chen},
+  booktitle   = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year        = {2024},
+  arxiv_year  = {2023},
+  arxiv       = {2311.00180},
+  pdf         = {https://arxiv.org/pdf/2311.00180},
+  annotation  = {* Equal contribution},
+  abstract    = {We propose ObjectPrompts, an approach to extract task-specific object-centric representations from general-purpose pretrained models without finetuning. We also propose a Transformer-based architecture to retrieve relevant objects from past observations for long-term action anticipation.},
+  preview     = {objectprompts.png},
+  bibtex_show = {true}
+}
+
+@inproceedings{zhao2024antgpt,
+  abbr        = {ICLR},
+  title       = {AntGPT: Can Large Language Models Help Long-term Action Anticipation from Videos?},
+  author      = {Zhao*, Qi and Wang*, Shijie and Zhang, Ce and Fu, Changcheng and Do, Minh Quan and Agarwal, Nakul and Lee, Kwonjoon and Sun, Chen},
+  booktitle   = {International Conference on Learning Representations (ICLR)},
+  year        = {2024},
+  arxiv_year  = {2023},
+  arxiv       = {2307.16368},
+  pdf         = {https://arxiv.org/pdf/2307.16368},
+  annotation  = {* Equal contribution},
+  abstract    = {We use discretized action labels to represent videos and then feed these text representations to LLMs for long-term action anticipation. Results on Ego4D, EK-55, and Gaze show that this simple approach is surprisingly effective.},
+  preview     = {antgpt.png},
+  bibtex_show = {true}
+}
+
+@inproceedings{zeng2023gcpc,
+  abbr        = {NeurIPS},
+  title       = {Goal-Conditioned Predictive Coding as an Implicit Planner for Offline Reinforcement Learning},
+  author      = {Zeng, Zilai and Zhang, Ce and Wang, Shijie and Sun, Chen},
+  booktitle   = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year        = {2023},
+  arxiv_year  = {2023},
+  arxiv       = {2307.03406},
+  pdf         = {https://arxiv.org/pdf/2307.03406},
+  abstract    = {We investigate whether sequence modeling has the capability to condense trajectories into useful representations that can contribute to policy learning. GCPC achieves competitive performance on AntMaze, FrankaKitchen, and Locomotion.},
+  preview     = {gcpc.png},
+  bibtex_show = {true}
+}

@@ -1,0 +1,28 @@
+# Venue badge colors for the publication lists.
+# Keys must match the `abbr` field in _bibliography/papers.bib. Add `url:` to make a badge a link.
+"NeurIPS":
+  color: "#6f42c1"
+
+"ICLR":
+  color: "#2c7a51"
+
+"CVPR":
+  color: "#1f5fa8"
+
+"WACV":
+  color: "#3e5c9a"
+
+"EMNLP":
+  color: "#b5532a"
+
+"COLM":
+  color: "#a8326e"
+
+"TMLR":
+  color: "#0f7c8c"
+
+"arXiv":
+  color: "#6b7280"
+
+"Preprints":
+  color: "#6b7280"

@@ -1,0 +1,155 @@
+/*******************************************************************************
+ * Site-specific styles, loaded after al-folio's own (see assets/css/main.scss).
+ * Design: al-folio "classic" (purple accent, dark mode, colored venue badges from
+ * _data/venues.yml) with Source Serif text, a circular portrait, compact news,
+ * and "see all" links on the home-page section headings.
+ * The font is loaded via third_party_libraries.google_fonts in _config.yml.
+ ******************************************************************************/
+
+:root {
+  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  /* Chinese glyphs: Songti (macOS), Source Han / Noto Serif CJK (Linux), YaHei (Windows) */
+  --font-cjk: "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif CJK SC", "Noto Serif SC", "Microsoft YaHei", "PingFang SC", serif;
+}
+
+/* ---------- text font ---------- */
+/* same size and line height as al-folio's default, only the typeface changes */
+body {
+  font-family: var(--font-serif);
+  font-weight: 400; /* al-folio uses 300 (Roboto Light); Source Serif is loaded at 400/600 */
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+/* al-folio keeps the light-mode red in dark mode, where it is hard to read */
+html[data-theme="dark"] {
+  --global-highlight-color: #ff7b72;
+}
+
+/* "1st place", "Outstanding Reviewer Award", ... in news and service */
+.text-award {
+  color: var(--global-highlight-color);
+  font-weight: 600;
+}
+
+/* award button on a paper, e.g. "1st Place, CVPR'25 Challenge" */
+.publications ol.bibliography li .links a.award.btn {
+  color: var(--global-highlight-color);
+  font-weight: 600;
+}
+
+/* ---------- name: "Ce Zhang (张册)" with no bold first name ---------- */
+.post-title .font-weight-bold,
+.navbar-brand .font-weight-bold {
+  font-weight: inherit;
+}
+
+.post-header .post-title .native-name {
+  /* no generic `serif` before the CJK fonts: browsers would resolve it to SimSun for Chinese glyphs */
+  font-family: "Source Serif 4", "Source Serif Pro", var(--font-cjk);
+}
+
+@media (max-width: 575.98px) {
+  .post-header .post-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* ---------- circular portrait beside the bio ---------- */
+@media (min-width: 576px) {
+  .profile {
+    width: 25%;
+  }
+
+  /* keep the bio in its own column instead of wrapping under the portrait */
+  .profile + .clearfix {
+    display: flow-root;
+  }
+}
+
+.profile.float-left {
+  margin-right: 2.25rem;
+}
+
+.profile.float-right {
+  margin-left: 2.25rem;
+}
+
+.profile figure {
+  margin: 0.35rem 0 1rem;
+}
+
+.profile img {
+  box-shadow:
+    0 0 0 5px var(--global-bg-color),
+    0 0 0 6px var(--global-divider-color),
+    0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* email / scholar / github / x / cv icons under the portrait */
+.profile .profile-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.profile .profile-social a {
+  color: var(--global-text-color);
+}
+
+.profile .profile-social a:hover {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+@media (max-width: 575.98px) {
+  .profile figure {
+    text-align: center;
+  }
+
+  .profile img {
+    max-width: 200px;
+  }
+}
+
+/* ---------- "see all →" after the news / selected publications headings ---------- */
+.post article > h2 > a::after {
+  content: "see all \2192";
+  margin-left: 0.85rem;
+  font-size: 0.95rem;
+  vertical-align: middle;
+  color: var(--global-theme-color);
+}
+
+.post article > h2 > a:hover {
+  text-decoration: none;
+}
+
+.post article > h2 > a:hover::after {
+  text-decoration: underline;
+}
+
+/* ---------- venue badges: white text in both themes (al-folio uses the card color, which is dark in dark mode) ---------- */
+.publications ol.bibliography li .abbr abbr {
+  color: #fff !important;
+}
+
+/* ---------- news: compact list ---------- */
+.news .table th,
+.news .table td {
+  padding: 0.2rem 0.5rem 0.2rem 0;
+  vertical-align: baseline;
+}
+
+.news .table th {
+  width: 6.5rem !important;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}

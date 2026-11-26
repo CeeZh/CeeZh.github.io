@@ -20,6 +20,7 @@ _data/
 assets/
   img/prof_pic.jpg           profile photo (square crop)
   img/prof_pic_full.jpg      full, uncropped profile photo (kept for later use; not shown on the site)
+  img/favicon.png            site icon (blue music note), set by `icon:` in _config.yml
   img/publication_preview/   paper thumbnails
   pdf/CV_Ce_Zhang.pdf        CV
   css/main.scss              loads al-folio's styles + _sass/_custom.scss

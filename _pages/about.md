@@ -36,5 +36,5 @@ I like music, guitar, basketball, and PC games.
 
 ## service
 
-**Reviewer:** NeurIPS 2026, CVPR 2026, NeurIPS 2025, ICCV 2025, CVPR 2025, ECCV 2024 (<span class="text-award">Outstanding Reviewer Award</span>), ACL Rolling Review (June 2024, December 2024), IEEE TPAMI, IEEE TCSVT<br>
+**Reviewer:** NeurIPS 2026, CVPR 2026, NeurIPS 2025, ICCV 2025, CVPR 2025, ECCV 2024 (<span class="text-award">Outstanding Reviewer Award</span>), ACL Rolling Review (May 2025, December 2024, June 2024), IEEE TPAMI, IEEE TCSVT<br>
 **Organizer:** [LOVEU @ CVPR 2026](https://sites.google.com/view/loveucvpr26), [T4V @ CVPR 2026](https://sites.google.com/view/t4v-cvpr26/), [T4V @ CVPR 2025](https://sites.google.com/view/t4v-cvpr25/), [T4V @ CVPR 2024](https://sites.google.com/view/t4v-cvpr24)

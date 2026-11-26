@@ -146,6 +146,17 @@ html[data-theme="dark"] {
   color: inherit;
 }
 
+/* ---------- footer: after the content (footer_fixed: false), at the window bottom on short pages ---------- */
+body.sticky-bottom-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.sticky-bottom-footer > .container {
+  flex: 1 0 auto;
+}
+
 /* ---------- news: compact list ---------- */
 .news .table th,
 .news .table td {

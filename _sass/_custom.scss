@@ -141,6 +141,11 @@ html[data-theme="dark"] {
   color: #fff !important;
 }
 
+/* the venue name sits in a <div> inside the badge, and al-folio colors every div with the text color */
+.publications ol.bibliography li .abbr abbr div {
+  color: inherit;
+}
+
 /* ---------- news: compact list ---------- */
 .news .table th,
 .news .table td {
